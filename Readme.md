@@ -1289,4 +1289,1039 @@ Third Normal Form requires the table to be in 2NF and non-prime attributes must 
 
 ### 19. What is BCNF?
 
-Boyce-Codd Normal Form requires every determinant of a non-trivial
+Boyce-Codd Normal Form requires every determinant of a non-trivial functional dependency to be a super key.
+
+### 20. Difference between 3NF and BCNF?
+
+BCNF is stricter than 3NF. In BCNF, every determinant must be a super key, while 3NF permits certain dependencies where the dependent attribute is prime.
+
+### 21. What is a functional dependency?
+
+A functional dependency X → Y means that each value of X determines exactly one value of Y.
+
+### 22. What is a partial dependency?
+
+A partial dependency occurs when a non-prime attribute depends on only part of a composite candidate key.
+
+### 23. What is a transitive dependency?
+
+A transitive dependency occurs when an attribute depends on a key through another non-key attribute.
+
+### 24. What is denormalization?
+
+Denormalization intentionally introduces some redundancy to improve query performance or simplify reads.
+
+## Transactions and ACID Properties
+
+### 25. What is a transaction?
+
+A transaction is a logical unit of database operations that should be completed as a single reliable operation.
+
+Example: Transferring money from one bank account to another.
+
+### 26. Explain ACID properties.
+
+- Atomicity: All operations happen or none happen.
+- Consistency: A transaction preserves database rules.
+- Isolation: Concurrent transactions should not interfere in prohibited ways.
+- Durability: Committed changes survive failures according to the database's guarantees.
+
+### 27. What is COMMIT?
+
+COMMIT permanently saves the changes made by a transaction.
+
+### 28. What is ROLLBACK?
+
+ROLLBACK undoes uncommitted changes in the current transaction.
+
+### 29. What is SAVEPOINT?
+
+SAVEPOINT creates a point within a transaction to which a partial rollback can be performed.
+
+### 30. What are transaction states?
+
+Common states include Active, Partially Committed, Committed, Failed, and Aborted.
+
+## Indexing and Concurrency
+
+### 31. What is indexing?
+
+Indexing creates an auxiliary data structure to speed up data retrieval.
+
+### 32. What are the disadvantages of indexing?
+
+- Requires additional storage.
+- Can slow down INSERT, UPDATE, and DELETE.
+- Requires maintenance.
+
+### 33. What is a B-tree?
+
+A B-tree is a balanced search tree designed for efficient searching, insertion, and deletion.
+
+### 34. What is a B+ tree?
+
+A B+ tree stores actual data entries or record pointers at leaf nodes, while internal nodes guide the search. Linked leaves make range scans efficient.
+
+### 35. What is a deadlock?
+
+A deadlock occurs when two or more transactions wait indefinitely for resources held by one another.
+
+### 36. What is concurrency control?
+
+Concurrency control manages simultaneous transactions to maintain database correctness and isolation.
+
+### 37. What is locking?
+
+Locking controls access to database resources while transactions execute.
+
+### 38. Difference between shared and exclusive locks?
+
+- Shared lock permits multiple transactions to read a resource.
+- Exclusive lock permits a transaction to modify a resource and generally prevents other conflicting access.
+
+### 39. What is two-phase locking?
+
+Two-phase locking has two phases:
+
+1. Growing phase: Locks are acquired and not released.
+2. Shrinking phase: Locks are released and no new locks are acquired.
+
+It helps ensure conflict serializability.
+
+### 40. What is serializability?
+
+Serializability means concurrent transactions produce a result equivalent to some serial execution order.
+
+### 41. What is a dirty read?
+
+A dirty read occurs when a transaction reads uncommitted data written by another transaction.
+
+### 42. What is a non-repeatable read?
+
+A transaction reads the same row twice and gets different values because another transaction committed an update between the reads.
+
+### 43. What is a phantom read?
+
+A transaction repeats a range query and sees additional or missing rows because another transaction inserted or deleted matching rows.
+
+### 44. What are isolation levels?
+
+Common SQL isolation levels are:
+
+- Read Uncommitted
+- Read Committed
+- Repeatable Read
+- Serializable
+
+Exact behavior can vary between database engines.
+
+## DBMS Resources
+
+- GeeksforGeeks: https://www.geeksforgeeks.org/dbms/
+- TutorialsPoint: https://www.tutorialspoint.com/dbms/
+- PostgreSQL: https://www.postgresql.org/docs/
+- Oracle Database Concepts: https://docs.oracle.com/en/database/oracle/oracle-database/
+- Gate Smashers: https://www.youtube.com/@GateSmashers
+
+---
+
+# 5. Computer Networks Interview Questions and Answers
+
+## Network Fundamentals
+
+### 1. What is a computer network?
+
+A computer network is a collection of interconnected devices that communicate and share resources.
+
+### 2. What are LAN, MAN, and WAN?
+
+- LAN: Local Area Network, covering a small area.
+- MAN: Metropolitan Area Network, covering a city or metropolitan region.
+- WAN: Wide Area Network, covering large geographical areas.
+
+### 3. What is an IP address?
+
+An IP address is a logical address used to identify a device or interface on an IP network.
+
+### 4. Difference between IPv4 and IPv6?
+
+- IPv4 uses 32-bit addresses.
+- IPv6 uses 128-bit addresses.
+- IPv6 provides a much larger address space and has a different packet format.
+
+### 5. What is a MAC address?
+
+A MAC address is a link-layer hardware address used for communication on a local network. It is typically assigned to a network interface.
+
+### 6. Difference between IP and MAC address?
+
+- IP address is used for logical addressing and routing between networks.
+- MAC address is used for local link-layer delivery.
+- IP addresses can change depending on the network; MAC addresses are generally assigned to interfaces.
+
+### 7. What is a port number?
+
+A port number identifies a communication endpoint associated with a process or service on a device.
+
+Examples:
+- HTTP: 80
+- HTTPS: 443
+- SSH: 22
+- DNS: 53
+- FTP control: 21
+
+### 8. What is bandwidth?
+
+Bandwidth is the maximum data-transfer capacity of a communication link, usually measured in bits per second.
+
+### 9. What is latency?
+
+Latency is the time taken for data to travel from one point to another.
+
+### 10. What is packet switching?
+
+Packet switching divides data into packets that are transmitted independently through a network and reassembled at the destination.
+
+### 11. What is DNS?
+
+Domain Name System translates domain names such as `example.com` into IP addresses and other DNS records.
+
+### 12. What is DHCP?
+
+Dynamic Host Configuration Protocol automatically provides network configuration such as IP address, subnet mask, gateway, and DNS servers.
+
+### 13. What is a gateway?
+
+A gateway connects different networks. A default gateway is typically the router used to reach destinations outside the local network.
+
+## OSI and TCP/IP Models
+
+### 14. What is the OSI model?
+
+The Open Systems Interconnection model is a seven-layer conceptual framework used to understand network communication.
+
+### 15. Explain the seven OSI layers.
+
+1. Physical: Transmits raw bits.
+2. Data Link: Handles frames and local delivery.
+3. Network: Handles logical addressing and routing.
+4. Transport: Provides end-to-end transport.
+5. Session: Manages communication sessions.
+6. Presentation: Handles data representation, encoding, and related functions.
+7. Application: Provides network services to applications.
+
+### 16. What is the TCP/IP model?
+
+The TCP/IP model describes Internet communication using layers commonly represented as:
+
+1. Application
+2. Transport
+3. Internet
+4. Network Access or Link
+
+### 17. Difference between OSI and TCP/IP?
+
+OSI is a seven-layer reference model. TCP/IP is a practical networking architecture used by the Internet and is commonly represented using four layers.
+
+### 18. Which layer is responsible for routing?
+
+The Network layer in OSI, corresponding to the Internet layer in TCP/IP.
+
+### 19. Which layer handles encryption?
+
+Encryption can be implemented at different layers. TLS is commonly associated with the application-facing transport security stack, while encryption can also occur at lower layers.
+
+### 20. What is encapsulation?
+
+Encapsulation is the process of adding protocol headers, and sometimes trailers, as data moves down the network stack.
+
+## TCP and UDP
+
+### 21. What is TCP?
+
+Transmission Control Protocol is a connection-oriented transport protocol that provides reliable, ordered byte-stream delivery.
+
+### 22. What is UDP?
+
+User Datagram Protocol is a connectionless transport protocol that sends datagrams without guaranteeing delivery, order, or duplicate protection.
+
+### 23. Difference between TCP and UDP?
+
+| TCP | UDP |
+|---|---|
+| Connection-oriented | Connectionless |
+| Reliable delivery | No delivery guarantee |
+| Ordered byte stream | Independent datagrams |
+| More transport overhead | Lower overhead |
+| Used for many web and file-transfer connections | Used in DNS, real-time media, and other applications |
+
+### 24. What is the TCP three-way handshake?
+
+TCP establishes a connection using:
+
+1. SYN: Client requests connection.
+2. SYN-ACK: Server acknowledges and responds.
+3. ACK: Client acknowledges the response.
+
+### 25. What is TCP four-way termination?
+
+A typical graceful TCP close involves:
+
+1. FIN from one side.
+2. ACK from the other side.
+3. FIN from the other side.
+4. ACK from the first side.
+
+### 26. What is flow control?
+
+Flow control prevents a sender from overwhelming the receiver. TCP uses a receive window to communicate how much data the receiver can accept.
+
+### 27. What is congestion control?
+
+Congestion control manages the amount of data sent into the network to reduce congestion and packet loss.
+
+### 28. What is a socket?
+
+A socket is a communication endpoint identified by an IP address, transport protocol, and port.
+
+## Important Networking Concepts
+
+### 29. What is HTTP?
+
+Hypertext Transfer Protocol is an application-layer protocol used for communication between web clients and servers.
+
+### 30. What is HTTPS?
+
+HTTPS is HTTP protected by TLS, providing encryption, integrity protection, and server authentication.
+
+### 31. Difference between HTTP and HTTPS?
+
+HTTP does not itself provide TLS security. HTTPS uses TLS to protect the communication channel.
+
+### 32. What is SSL/TLS?
+
+TLS is a cryptographic protocol that provides secure communication. SSL is its older predecessor and is deprecated.
+
+### 33. What is a firewall?
+
+A firewall monitors and controls network traffic according to security rules.
+
+### 34. What is a proxy server?
+
+A proxy acts as an intermediary between a client and another server.
+
+### 35. What is a VPN?
+
+A Virtual Private Network creates a protected connection across another network, often using encryption and tunneling.
+
+### 36. What is NAT?
+
+Network Address Translation modifies IP address information in packet headers, commonly allowing multiple private devices to share a public IP address.
+
+### 37. What is a subnet mask?
+
+A subnet mask identifies which part of an IPv4 address represents the network and which part represents the host.
+
+### 38. What is ARP?
+
+Address Resolution Protocol maps an IPv4 address to a link-layer address on a local network.
+
+### 39. What is ICMP?
+
+Internet Control Message Protocol is used for network diagnostics and error reporting. Tools such as ping commonly use ICMP Echo messages.
+
+### 40. Difference between hub, switch, and router?
+
+- Hub: Broadcasts incoming signals to all ports.
+- Switch: Forwards frames based on MAC addresses.
+- Router: Forwards packets between networks using IP addresses.
+
+### 41. What happens when you enter a URL in a browser?
+
+A simplified sequence:
+
+1. Browser parses the URL.
+2. Browser checks relevant caches.
+3. DNS resolves the domain name.
+4. The browser establishes a connection with the server.
+5. TLS negotiation occurs for HTTPS.
+6. Browser sends an HTTP request.
+7. Server processes the request and responds.
+8. Browser processes the response and renders the page.
+
+### 42. What are HTTP status codes?
+
+- 1xx: Informational.
+- 2xx: Success.
+- 3xx: Redirection.
+- 4xx: Client error.
+- 5xx: Server error.
+
+Common examples:
+- 200: OK
+- 201: Created
+- 301: Moved Permanently
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+- 503: Service Unavailable
+
+## Computer Networks Resources
+
+- Cloudflare Learning Center: https://www.cloudflare.com/learning/
+- Cisco Networking Academy: https://www.netacad.com/
+- GeeksforGeeks: https://www.geeksforgeeks.org/computer-network-tutorials/
+- Kurose and Ross Companion Website: https://gaia.cs.umass.edu/kurose_ross/
+- Gate Smashers: https://www.youtube.com/@GateSmashers
+
+---
+
+# 6. Operating Systems Interview Questions and Answers
+
+## Operating System Fundamentals
+
+### 1. What is an operating system?
+
+An operating system is system software that manages computer hardware, software resources, processes, memory, files, and input/output devices.
+
+Examples: Windows, Linux, macOS, Android.
+
+### 2. What are the main functions of an operating system?
+
+- Process management.
+- Memory management.
+- File management.
+- Device management.
+- Security and access control.
+- Resource allocation.
+- User interface.
+
+### 3. What are the types of operating systems?
+
+- Batch operating systems.
+- Time-sharing operating systems.
+- Distributed operating systems.
+- Real-time operating systems.
+- Network operating systems.
+- Multiprocessing operating systems.
+
+### 4. What is a kernel?
+
+The kernel is the core component of an operating system. It manages hardware resources and provides essential services to processes.
+
+### 5. What is a system call?
+
+A system call is a mechanism through which a user program requests a service from the operating system kernel.
+
+Examples include file operations, process creation, and memory management.
+
+### 6. Difference between kernel and shell?
+
+- Kernel manages system resources and hardware.
+- Shell provides an interface through which users interact with the operating system.
+
+### 7. What is booting?
+
+Booting is the process of starting a computer and loading the operating system into memory.
+
+### 8. What is multitasking?
+
+Multitasking allows multiple tasks to make progress through CPU scheduling and resource sharing.
+
+### 9. What is multiprocessing?
+
+Multiprocessing uses multiple CPUs or CPU cores to execute processes in parallel.
+
+### 10. What is multithreading?
+
+Multithreading allows multiple threads within a process to execute concurrently.
+
+## Process Management
+
+### 11. What is a process?
+
+A process is a program in execution, including its execution state and allocated resources.
+
+### 12. What is a thread?
+
+A thread is the smallest unit of execution scheduled by the operating system. Threads in the same process share much of the process's resources.
+
+### 13. Difference between process and thread?
+
+| Process | Thread |
+|---|---|
+| Independent execution unit | Execution unit within a process |
+| Separate address space | Shares process address space |
+| Higher resource overhead | Generally lower overhead |
+| Communication often requires IPC | Communication can use shared memory |
+
+### 14. What are the states of a process?
+
+Common process states are:
+
+1. New
+2. Ready
+3. Running
+4. Waiting or Blocked
+5. Terminated
+
+### 15. What is PCB?
+
+Process Control Block is a data structure maintained by the operating system to store process information such as process ID, state, registers, scheduling information, and memory information.
+
+### 16. What is context switching?
+
+Context switching is the process of saving the state of one execution context and restoring another so the CPU can switch between processes or threads.
+
+### 17. What is Inter-Process Communication?
+
+IPC allows processes to exchange information and coordinate their execution.
+
+Examples:
+- Pipes.
+- Message queues.
+- Shared memory.
+- Sockets.
+- Signals.
+
+### 18. What is process scheduling?
+
+Process scheduling determines which ready process should execute on the CPU.
+
+### 19. Difference between preemptive and non-preemptive scheduling?
+
+- Preemptive scheduling allows the OS to interrupt a running process.
+- Non-preemptive scheduling generally lets a process continue until it blocks, finishes, or voluntarily yields.
+
+## CPU Scheduling Algorithms
+
+### 20. What is FCFS?
+
+First Come First Serve executes processes in the order they arrive. It is simple but can cause the convoy effect.
+
+### 21. What is SJF?
+
+Shortest Job First selects the available process with the smallest expected CPU burst. It can minimize average waiting time under ideal assumptions.
+
+### 22. What is SRTF?
+
+Shortest Remaining Time First is the preemptive version of SJF. It selects the process with the shortest remaining CPU burst.
+
+### 23. What is Round Robin?
+
+Round Robin assigns each process a fixed time quantum. If a process does not finish within the quantum, it is moved to the back of the ready queue.
+
+### 24. What is Priority Scheduling?
+
+Priority Scheduling selects the process with the highest priority. Low-priority processes may suffer starvation.
+
+### 25. What is starvation?
+
+Starvation occurs when a process waits indefinitely because resources or CPU time keep being allocated to other processes.
+
+### 26. What is aging?
+
+Aging gradually increases the priority of waiting processes to prevent starvation.
+
+### 27. What are turnaround time and waiting time?
+
+- Turnaround Time = Completion Time − Arrival Time.
+- Waiting Time = Turnaround Time − CPU Burst Time, for the basic single-burst scheduling model.
+
+### 28. What is response time?
+
+Response Time = First CPU Start Time − Arrival Time.
+
+## Deadlocks and Synchronization
+
+### 29. What is a deadlock?
+
+A deadlock occurs when a group of processes waits indefinitely for resources held by one another.
+
+### 30. What are the four necessary conditions for deadlock?
+
+1. Mutual Exclusion.
+2. Hold and Wait.
+3. No Preemption.
+4. Circular Wait.
+
+All four must hold simultaneously for a deadlock to occur under the classic model.
+
+### 31. What is deadlock prevention?
+
+Deadlock prevention ensures at least one necessary deadlock condition cannot hold.
+
+### 32. What is deadlock avoidance?
+
+Deadlock avoidance checks whether resource allocation will keep the system in a safe state before granting requests.
+
+### 33. What is Banker's Algorithm?
+
+Banker's Algorithm is a deadlock-avoidance algorithm that checks whether granting a resource request leaves the system in a safe state.
+
+### 34. What is a semaphore?
+
+A semaphore is a synchronization mechanism that uses an integer counter and atomic operations such as wait and signal to coordinate access to resources.
+
+### 35. What is a mutex?
+
+A mutex is a mutual-exclusion lock that allows only one thread at a time to enter a protected critical section.
+
+### 36. Difference between mutex and semaphore?
+
+- Mutex is generally used for exclusive ownership of a resource.
+- Semaphore manages permits or resource availability and can allow multiple concurrent users depending on its count.
+
+### 37. What is a critical section?
+
+A critical section is a part of code that accesses shared data or resources and must be protected against unsafe concurrent execution.
+
+### 38. What is a race condition?
+
+A race condition occurs when program correctness depends on the timing or ordering of concurrent operations.
+
+### 39. What is the producer-consumer problem?
+
+It is a synchronization problem where producers add items to a shared buffer and consumers remove them. Synchronization is needed to prevent overflow, underflow, and race conditions.
+
+### 40. What is the dining philosophers problem?
+
+It is a classic synchronization problem illustrating deadlock and resource contention when several processes compete for limited shared resources.
+
+## Memory Management
+
+### 41. What is memory management?
+
+Memory management is the OS function responsible for allocating, tracking, protecting, and reclaiming memory.
+
+### 42. What is paging?
+
+Paging divides virtual memory into fixed-size pages and physical memory into fixed-size frames. Pages can be mapped to frames.
+
+### 43. What is segmentation?
+
+Segmentation divides memory into logical variable-sized segments such as code, data, and stack.
+
+### 44. Difference between paging and segmentation?
+
+| Paging | Segmentation |
+|---|---|
+| Fixed-size blocks | Variable-size blocks |
+| Pages and frames | Logical segments |
+| Avoids external fragmentation in physical allocation | Can suffer external fragmentation |
+| Mostly transparent to programmer | Reflects logical program divisions |
+
+### 45. What is virtual memory?
+
+Virtual memory gives processes the abstraction of a large private address space, with the OS and hardware mapping virtual addresses to physical memory or other backing storage.
+
+### 46. What is demand paging?
+
+Demand paging loads a page into physical memory only when it is needed.
+
+### 47. What is a page fault?
+
+A page fault occurs when a process accesses a virtual page that is not currently mapped to an available physical frame in the required way. The OS handles the fault.
+
+### 48. What is thrashing?
+
+Thrashing occurs when the system spends excessive time handling page faults and swapping pages rather than executing useful work.
+
+### 49. What is fragmentation?
+
+Fragmentation is wasted memory space caused by the way memory is allocated and freed.
+
+### 50. Difference between internal and external fragmentation?
+
+- Internal fragmentation: Unused space inside an allocated block.
+- External fragmentation: Free memory exists but is scattered into small non-contiguous blocks.
+
+### 51. What is a page replacement algorithm?
+
+A page replacement algorithm decides which page to remove when a new page must be loaded and no free frame is available.
+
+### 52. Explain FIFO page replacement.
+
+FIFO removes the page that has been in memory the longest.
+
+### 53. Explain LRU page replacement.
+
+Least Recently Used replaces the page that has not been accessed for the longest time.
+
+### 54. Explain Optimal page replacement.
+
+Optimal replaces the page whose next use is farthest in the future. It is mainly a theoretical benchmark because future references are not generally known.
+
+## Operating Systems Resources
+
+- Operating System Concepts: https://www.os-book.com/
+- GeeksforGeeks OS: https://www.geeksforgeeks.org/operating-systems/
+- TutorialsPoint: https://www.tutorialspoint.com/operating_system/
+- Linux Kernel Documentation: https://docs.kernel.org/
+- Gate Smashers: https://www.youtube.com/@GateSmashers
+
+---
+
+# 7. Data Structures and Algorithms
+
+For DSE preparation, focus on problem-solving, explaining your approach, and analyzing time and space complexity.
+
+## Important Topics
+
+1. Arrays and Strings
+2. Hashing
+3. Two Pointers
+4. Sliding Window
+5. Sorting
+6. Binary Search
+7. Linked Lists
+8. Stacks and Queues
+9. Recursion and Backtracking
+10. Trees and Binary Search Trees
+11. Graphs: BFS and DFS
+12. Greedy Algorithms
+13. Dynamic Programming
+14. Heaps and Priority Queues
+15. Bit Manipulation
+
+## Important LeetCode Problems
+
+| Problem | Link |
+|---|---|
+| Two Sum | https://leetcode.com/problems/two-sum/ |
+| Best Time to Buy and Sell Stock | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ |
+| Maximum Subarray | https://leetcode.com/problems/maximum-subarray/ |
+| Product of Array Except Self | https://leetcode.com/problems/product-of-array-except-self/ |
+| Longest Substring Without Repeating Characters | https://leetcode.com/problems/longest-substring-without-repeating-characters/ |
+| Longest Repeating Character Replacement | https://leetcode.com/problems/longest-repeating-character-replacement/ |
+| Search in Rotated Sorted Array | https://leetcode.com/problems/search-in-rotated-sorted-array/ |
+| Reverse Linked List | https://leetcode.com/problems/reverse-linked-list/ |
+| Linked List Cycle | https://leetcode.com/problems/linked-list-cycle/ |
+| Valid Parentheses | https://leetcode.com/problems/valid-parentheses/ |
+| Binary Tree Level Order Traversal | https://leetcode.com/problems/binary-tree-level-order-traversal/ |
+| Maximum Depth of Binary Tree | https://leetcode.com/problems/maximum-depth-of-binary-tree/ |
+| Number of Islands | https://leetcode.com/problems/number-of-islands/ |
+| Clone Graph | https://leetcode.com/problems/clone-graph/ |
+| Jump Game | https://leetcode.com/problems/jump-game/ |
+| Coin Change | https://leetcode.com/problems/coin-change/ |
+| Longest Increasing Subsequence | https://leetcode.com/problems/longest-increasing-subsequence/ |
+| Subsets | https://leetcode.com/problems/subsets/ |
+| Combination Sum | https://leetcode.com/problems/combination-sum/ |
+
+## DSA Resources
+
+- LeetCode: https://leetcode.com/
+- GeeksforGeeks: https://www.geeksforgeeks.org/
+- HackerRank: https://www.hackerrank.com/
+- NeetCode Roadmap: https://neetcode.io/roadmap
+- Striver A2Z DSA Sheet: https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
+
+---
+
+# 8. Project and Resume-Based Interview Questions
+
+### 1. Explain your project.
+
+Start with the problem statement, explain the solution, describe the technology stack, and summarize your individual contribution.
+
+### 2. Why did you choose this project?
+
+Explain the real-world problem and why your solution is useful.
+
+### 3. Explain your project architecture.
+
+Describe how the frontend communicates with the backend, how the backend processes requests, and how data is stored in the database.
+
+### 4. What was your individual contribution?
+
+Clearly explain the modules you personally designed, implemented, tested, and integrated.
+
+### 5. What was the most challenging part?
+
+Choose a genuine technical challenge and explain the problem, your debugging process, and the solution.
+
+### 6. Why did you choose this technology stack?
+
+Explain the strengths of the technologies and why they fit your requirements.
+
+### 7. How did you implement authentication?
+
+Explain the actual authentication flow, password hashing, session or token management, and authorization checks used in your project.
+
+### 8. How would you scale your project?
+
+Possible improvements include:
+
+- Database indexing.
+- Caching.
+- Load balancing.
+- Horizontal scaling.
+- Asynchronous processing.
+- Optimized API endpoints.
+- Monitoring and logging.
+
+### 9. How did you test your project?
+
+Explain unit testing, integration testing, validation testing, and manual testing actually performed.
+
+### 10. What would you improve?
+
+Mention realistic improvements such as better security, improved performance, responsive UI, stronger validation, and additional features.
+
+## Web Development Questions
+
+### What is Flask?
+
+Flask is a lightweight Python web framework used to build web applications and APIs.
+
+### What is REST?
+
+REST is an architectural style for designing networked applications. REST APIs commonly use HTTP methods and resource-oriented URLs.
+
+### Difference between GET and POST?
+
+- GET requests retrieve data.
+- POST requests submit data or request resource creation or processing.
+
+### What is JSON?
+
+JSON is a lightweight text format used to represent structured data.
+
+### What is authentication?
+
+Authentication verifies the identity of a user.
+
+### What is authorization?
+
+Authorization determines what an authenticated user is permitted to access.
+
+### What is CORS?
+
+Cross-Origin Resource Sharing is a browser security mechanism that controls whether a web page can make requests to a different origin.
+
+### What is MVC?
+
+Model-View-Controller is an architectural pattern that separates data and business logic, user interface, and request handling or control flow.
+
+---
+
+# 9. HR and Managerial Interview Questions with Sample Answers
+
+*Adapt these sample answers to your actual experience. Do not memorize them word for word.*
+
+### 1. Tell me about yourself.
+
+**Sample answer:**
+
+"I am a final-year B.Tech Information Technology student. I am interested in software development and problem-solving. I have been practicing data structures and algorithms and have worked on projects involving Python, Flask, MySQL, and web technologies. I enjoy learning new technologies and applying them to practical problems. I am looking forward to starting my career in a role where I can contribute technically and continue learning."
+
+### 2. Why do you want to join Infosys?
+
+**Sample answer:**
+
+"Infosys is a well-established IT services and consulting company with opportunities to work on different technologies and business problems. I am interested in starting my career in an environment where I can learn from experienced professionals, work on real-world projects, and improve my technical and professional skills."
+
+### 3. Why are you interested in the DSE role?
+
+**Sample answer:**
+
+"I am interested in the DSE role because it aligns with my interest in programming, problem-solving, and software development. I want to work on challenging technical problems and develop solutions that have practical business value."
+
+### 4. What are your strengths?
+
+**Sample answer:**
+
+"My strengths are consistency in learning, problem-solving, and willingness to improve. I try to understand concepts rather than simply memorize solutions."
+
+### 5. What is your weakness?
+
+**Sample answer:**
+
+"Sometimes I spend more time than necessary exploring alternative approaches to a problem. I am improving by setting time limits and prioritizing a working solution before optimization."
+
+### 6. Why should we hire you?
+
+**Sample answer:**
+
+"I have a good foundation in programming and computer science concepts, practical project experience, and an interest in continuous learning. I am willing to take responsibility, adapt to new technologies, and contribute to the team."
+
+### 7. How do you handle pressure?
+
+**Sample answer:**
+
+"I divide the work into smaller tasks, identify priorities, and focus on solving one problem at a time. If I face a blocker, I try to understand it systematically and seek guidance when required."
+
+### 8. What do you do when you don't know an answer?
+
+**Sample answer:**
+
+"I would be honest that I don't know the answer. I would try to reason through the problem using what I know and explain my thought process rather than guessing."
+
+### 9. Are you comfortable relocating?
+
+**Sample answer:**
+
+"Yes, I am open to relocation based on the role and business requirements."
+
+### 10. Where do you see yourself in five years?
+
+**Sample answer:**
+
+"I want to become a capable software professional with strong technical expertise, practical project experience, and the ability to take ownership of important responsibilities."
+
+---
+
+# 10. Complete Learning Resource Directory
+
+## Programming Languages
+
+| Subject | Direct Resource |
+|---|---|
+| Python Documentation | https://docs.python.org/3/ |
+| Python Tutorial | https://docs.python.org/3/tutorial/ |
+| Java Learning | https://dev.java/learn/ |
+| Java Documentation | https://docs.oracle.com/en/java/ |
+| C++ Reference | https://en.cppreference.com/w/ |
+| SQLBolt | https://sqlbolt.com/ |
+
+## Computer Science Fundamentals
+
+| Subject | Direct Resource |
+|---|---|
+| DBMS | https://www.geeksforgeeks.org/dbms/ |
+| Operating Systems | https://www.geeksforgeeks.org/operating-systems/ |
+| Computer Networks | https://www.geeksforgeeks.org/computer-network-tutorials/ |
+| OOP | https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/ |
+| Software Engineering | https://www.geeksforgeeks.org/software-engineering/ |
+
+## Coding Practice
+
+| Platform | Direct Link |
+|---|---|
+| LeetCode | https://leetcode.com/ |
+| HackerRank | https://www.hackerrank.com/ |
+| GeeksforGeeks | https://www.geeksforgeeks.org/ |
+| CodeChef | https://www.codechef.com/ |
+| Codeforces | https://codeforces.com/ |
+| NeetCode | https://neetcode.io/ |
+| InterviewBit | https://www.interviewbit.com/ |
+
+## Infosys Resources
+
+- Infosys Careers: https://www.infosys.com/careers/
+- Infosys Official Website: https://www.infosys.com/
+- Infosys Springboard: https://infyspringboard.onwingspan.com/
+
+## Interview Experience Platforms
+
+- Glassdoor: https://www.glassdoor.co.in/Interview/index.htm
+- AmbitionBox: https://www.ambitionbox.com/interviews
+
+*Note: Candidate-reported interview experiences are not official Infosys question papers. Actual hiring stages and questions can vary.*
+
+---
+
+# 11. Recommended Preparation Strategy
+
+## Phase 1 – Programming
+
+- Select one primary programming language.
+- Revise fundamentals and OOP.
+- Practice coding problems.
+- Understand built-in data structures.
+- Practice explaining code line by line.
+
+## Phase 2 – DSA
+
+- Arrays and strings.
+- Hashing and two pointers.
+- Sliding window.
+- Binary search.
+- Linked lists.
+- Trees and graphs.
+- Recursion and backtracking.
+- Greedy algorithms and dynamic programming.
+
+## Phase 3 – Core Computer Science
+
+- SQL queries and joins.
+- DBMS and normalization.
+- Transactions and ACID.
+- OS processes and threads.
+- CPU scheduling.
+- Deadlocks and memory management.
+- OSI model and TCP/UDP.
+- HTTP, DNS, and IP addressing.
+
+## Phase 4 – Projects
+
+- Prepare a two-minute project introduction.
+- Understand the complete architecture.
+- Revise the database schema.
+- Understand important functions and APIs.
+- Explain your individual contribution.
+- Prepare for project-related follow-up questions.
+
+## Phase 5 – Mock Interviews
+
+- Practice technical questions aloud.
+- Solve coding problems within a time limit.
+- Write SQL queries without looking at solutions.
+- Explain your approach and complexity.
+- Practice HR questions.
+
+---
+
+# 12. Final Interview Checklist
+
+- [ ] Python fundamentals revised.
+- [ ] Java fundamentals revised if relevant.
+- [ ] OOP concepts understood.
+- [ ] SQL queries practiced.
+- [ ] SQL JOINs and subqueries revised.
+- [ ] DBMS normalization understood.
+- [ ] ACID properties revised.
+- [ ] Indexing and transactions understood.
+- [ ] OS process and thread concepts revised.
+- [ ] CPU scheduling algorithms practiced.
+- [ ] Deadlock concepts understood.
+- [ ] Paging and virtual memory revised.
+- [ ] OSI model memorized with explanations.
+- [ ] TCP and UDP differences understood.
+- [ ] DNS, HTTP, HTTPS, and IP addressing revised.
+- [ ] Arrays and strings practiced.
+- [ ] Linked lists and trees revised.
+- [ ] Graph BFS and DFS practiced.
+- [ ] Recursion and dynamic programming revised.
+- [ ] Every resume project explained.
+- [ ] GitHub repositories checked.
+- [ ] HR questions practiced.
+- [ ] At least one mock interview completed.
+
+---
+
+# Final Advice
+
+Do not prepare only by memorizing answers.
+
+For every technical concept:
+
+1. Understand the definition.
+2. Learn how it works internally.
+3. Write a small example.
+4. Understand its real-world use.
+5. Practice explaining it in simple language.
+
+For coding problems, always explain:
+
+- Your approach.
+- Why you selected that approach.
+- Time complexity.
+- Space complexity.
+- Edge cases.
+
+**The goal is not just to know the answer. The goal is to understand the concept well enough to explain it confidently and solve variations of the same problem.**
+
+All the best for your Infosys DSE interview!
